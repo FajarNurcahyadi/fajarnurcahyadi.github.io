@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Muhamad Fajar Nurcahyadi — Portofolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Muhamad Fajar Nurcahyadi — Fullstack Engineer & UI/UX Designer.">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper: #131417;
+            --paper-alt: #1c1e23;
+            --ink: #eef0f3;
+            --ink-soft: #9a9da4;
+            --ink-faint: #6d7077;
+            --accent: #3f6fee;
+            --accent-dark: #2c4fc2;
+            --line: rgba(255, 255, 255, 0.1);
+            --line-strong: rgba(255, 255, 255, 0.22);
+            --paper-soft: #a9acb2;
+            --accent-onDark: #7098ff;
+            --bg-deep: #0a0a0d;
+            --radius: 4px;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background: var(--paper);
+            color: var(--ink);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.045;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        section {
+            padding: 110px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(40px, 5.5vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -0.8px;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(30px, 3.6vw, 42px);
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        /* EYEBROW / SECTION LABEL */
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .section-head {
+            margin-bottom: 56px;
+        }
+
+        .section-head h2 {
+            margin-bottom: 0;
+        }
+
+        /* NAV */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(19, 20, 23, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            z-index: 99;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HAMBURGER */
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--ink);
+        }
+
+        /* MOBILE MENU */
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--paper);
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 40px;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--ink);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-size: 30px;
+            font-weight: 500;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            width: 100%;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--ink);
+            background: none;
+            border: none;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-ghost {
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: clamp(48px, 8vw, 150px);
+            line-height: 1;
+            white-space: nowrap;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--line-strong);
+            letter-spacing: -2px;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-role {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 22px 0 20px;
+        }
+
+        .hero-desc {
+            max-width: 480px;
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-photo-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent);
+            border-radius: var(--radius);
+            transform: rotate(-4deg);
+            z-index: 0;
+            transition: transform 0.35s;
+        }
+
+        .photo-frame:hover::before {
+            transform: rotate(-1deg);
+        }
+
+        .hero-photo,
+        .hero-photo-placeholder {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--ink);
+            transform: rotate(2deg);
+            transition: transform 0.35s;
+            display: block;
+        }
+
+        .photo-frame:hover .hero-photo {
+            transform: rotate(0deg);
+        }
+
+        .hero-photo-placeholder {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: var(--paper-alt);
+            font-size: 64px;
+            color: var(--ink-faint);
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 14px 30px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--ink);
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--line-strong);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--ink);
+            background: var(--paper-alt);
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-desc {
+            font-size: 16px;
+            margin-bottom: 34px;
+            max-width: 620px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 9px 16px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-soft);
+            background: var(--paper-alt);
+            transition: 0.2s;
+        }
+
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .tag-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            font-weight: 600;
+            margin: 34px 0 14px;
+        }
+
+        .about-info {
+            border-top: 1px solid var(--line);
+        }
+
+        .about-info-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+        .about-info-label {
+            color: var(--ink-faint);
+            font-weight: 500;
+        }
+
+        .about-info-value {
+            color: var(--ink);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* SKILLS MARQUEE */
+
+        .marquee-block {
+            background: var(--bg-deep);
+            color: var(--ink);
+            padding: 48px 0;
+            overflow: hidden;
+            clip-path: polygon(0 32px, 100% 0, 100% calc(100% - 32px), 0 100%);
+        }
+
+        .marquee-label {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 0 80px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-onDark);
+            font-weight: 600;
+        }
+
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            padding-left: 26px;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 26px;
+            animation: marquee-scroll 26s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-track .skill-word {
+            font-family: var(--font-heading);
+            font-size: clamp(16px, 2.6vw, 30px);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: var(--ink);
+        }
+
+        .marquee-track .dot {
+            color: var(--accent-onDark);
+            font-size: 13px;
+        }
+
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* SERVICES */
+
+        .services-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 32px;
+            padding: 36px 20px;
+            margin: 0 -20px;
+            border-bottom: 1px solid var(--line);
+            border-left: 3px solid transparent;
+            align-items: baseline;
+            transition: 0.25s;
+        }
+
+        .service-row:hover {
+            border-left-color: var(--accent);
+            background: rgba(63, 111, 238, 0.1);
+        }
+
+        .service-num {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--accent);
+            transition: 0.25s;
+        }
+
+        .service-row:hover .service-num {
+            transform: scale(1.15);
+        }
+
+        .service-row h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service-row p {
+            font-size: 15px;
+            max-width: 620px;
+            margin: 0;
+        }
+
+        /* RESUME */
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .resume-col h3 {
+            font-size: 20px;
+            margin-bottom: 34px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            border-left: 1px solid var(--line-strong);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28.5px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-date {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 6px;
+        }
+
+        .timeline-item h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0 0 6px;
+            color: var(--ink);
+        }
+
+        .timeline-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* PORTFOLIO */
+
+        .porto-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+
+        .porto-filter button {
+            background: transparent;
+            color: var(--ink-soft);
+            border: 1px solid var(--line-strong);
+            padding: 9px 20px;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            transition: 0.2s;
+        }
+
+        .porto-filter button:hover {
+            border-color: var(--ink);
+            color: var(--ink);
+        }
+
+        .porto-filter button.active {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px 32px;
+        }
+
+        .porto-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--paper-alt);
+            border: 1px solid var(--ink);
+            box-shadow: 6px 6px 0 var(--line-strong);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .porto-card:nth-child(4n+1) { transform: rotate(-1.2deg); }
+        .porto-card:nth-child(4n+2) { transform: rotate(1deg); }
+        .porto-card:nth-child(4n+3) { transform: rotate(-0.7deg); }
+        .porto-card:nth-child(4n+4) { transform: rotate(1.3deg); }
+
+        .porto-card:hover {
+            transform: rotate(0deg) translateY(-4px);
+            box-shadow: 8px 8px 0 var(--accent);
+        }
+
+        .porto-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .porto-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .porto-hover {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.82);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+            gap: 8px;
+        }
+
+        .porto-card:hover .porto-hover {
+            opacity: 1;
+        }
+
+        .porto-zoom {
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 1px solid var(--ink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--ink);
+            transition: 0.2s;
+            margin-bottom: 8px;
+        }
+
+        .porto-zoom:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .porto-hover h3 {
+            color: var(--ink);
+            font-size: 18px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .porto-hover span {
+            color: #d8d2c8;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .porto-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--paper);
+            color: var(--ink);
+            font-size: 10px;
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        /* MODAL */
+
+        #modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: var(--paper-alt);
+            border-radius: var(--radius);
+            max-width: 560px;
+            width: 100%;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-img-wrap {
+            position: relative;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(19, 20, 23, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-nav:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .modal-prev {
+            left: 12px;
+        }
+
+        .modal-next {
+            right: 12px;
+        }
+
+        .modal-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(19, 20, 23, 0.75);
+            color: var(--ink);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-dots {
+            display: flex;
+            gap: 6px;
+            margin-top: 18px;
+        }
+
+        .modal-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--line-strong);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-dot.active {
+            background: var(--accent);
+            width: 18px;
+            border-radius: 4px;
+        }
+
+        .modal-body {
+            padding: 28px 32px 32px;
+        }
+
+        .modal-body h3 {
+            font-size: 22px;
+            margin: 0 0 6px;
+        }
+
+        .modal-cat {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .modal-body p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--ink);
+            background: var(--paper);
+            border: 1px solid var(--line);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        /* CERTIFICATES */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .cert-card {
+            background: var(--paper-alt);
+            border: 1px solid var(--ink);
+            border-radius: var(--radius);
+            box-shadow: 6px 6px 0 var(--line-strong);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 var(--accent);
+        }
+
+        .cert-thumb {
+            height: 160px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--paper-alt), var(--bg-deep));
+            border-bottom: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        .cert-thumb-icon {
+            font-size: 52px;
+            color: var(--accent);
+        }
+
+        .cert-thumb-canvas {
+            display: none;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            background: #fff;
+        }
+
+        .cert-body {
+            padding: 22px 24px;
+        }
+
+        .cert-issuer {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 8px;
+        }
+
+        .cert-title {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .cert-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .cert-view i {
+            transition: transform 0.2s;
+        }
+
+        .cert-card:hover .cert-view i {
+            transform: translateX(4px);
+        }
+
+        /* CERTIFICATE MODAL */
+
+        #certModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .cert-modal-box {
+            background: var(--paper-alt);
+            border-radius: var(--radius);
+            max-width: 760px;
+            width: 100%;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cert-modal-header {
+            padding: 24px 60px 18px 28px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cert-modal-header h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .cert-modal-header .cert-issuer {
+            margin-bottom: 0;
+        }
+
+        .cert-modal-frame-wrap {
+            background: #525659;
+        }
+
+        .cert-modal-frame-wrap iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            display: block;
+        }
+
+        /* CONTACT */
+
+        .contact-list {
+            border-top: 1px solid var(--line);
+            max-width: 640px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+            text-decoration: none;
+            color: var(--ink);
+            transition: 0.2s;
+        }
+
+        .contact-row:hover {
+            padding-left: 10px;
+            color: var(--accent);
+        }
+
+        .contact-icon {
+            width: 20px;
+            font-size: 16px;
+            color: var(--ink-faint);
+            flex-shrink: 0;
+        }
+
+        .contact-row:hover .contact-icon {
+            color: var(--accent);
+        }
+
+        .contact-label {
+            font-size: 11px;
+            color: var(--ink-faint);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .contact-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: 0.2s;
+        }
+
+        .contact-row:hover .contact-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* DARK CLOSING BLOCK */
+
+        .block-dark {
+            background: var(--bg-deep);
+            clip-path: polygon(0 44px, 100% 0, 100% 100%, 0 100%);
+            padding-top: 30px;
+        }
+
+        .block-dark p {
+            color: var(--paper-soft);
+        }
+
+        .block-dark .eyebrow {
+            color: var(--accent-onDark);
+        }
+
+        .block-dark .contact-list {
+            border-top-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .block-dark .contact-row {
+            color: var(--ink);
+            border-bottom-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .block-dark .contact-row:hover {
+            color: var(--accent-onDark);
+        }
+
+        .block-dark .contact-icon {
+            color: var(--paper-soft);
+        }
+
+        .block-dark .contact-row:hover .contact-icon {
+            color: var(--accent-onDark);
+        }
+
+        .block-dark .contact-label {
+            color: var(--paper-soft);
+        }
+
+        .block-dark footer {
+            color: var(--paper-soft);
+            border-top-color: rgba(255, 255, 255, 0.14);
+        }
+
+        /* REVEAL */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--ink-faint);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-photo-wrap {
+                order: -1;
+            }
+            .photo-frame {
+                max-width: 220px;
+            }
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media(max-width:768px) {
+            section {
+                padding: 70px 24px;
+            }
+            .hero {
+                padding-top: 130px;
+            }
+            .hero-ghost {
+                display: none;
+            }
+            .marquee-label {
+                padding: 0 24px;
+            }
+            .marquee-block {
+                padding: 36px 0;
+            }
+            .resume-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .service-row {
+                grid-template-columns: 40px 1fr;
+                gap: 20px;
+                padding: 28px 12px;
+                margin: 0 -12px;
+            }
+            .porto-card {
+                transform: none !important;
+                box-shadow: 4px 4px 0 var(--line-strong);
+            }
+            .about-info-item {
+                font-size: 13px;
+            }
+            .cert-modal-frame-wrap iframe {
+                height: 55vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home" class="logo">Fajar Nurcahyadi</a>
+        <div class="nav-links">
+            <a href="#about">Tentang</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#services">Layanan</a>
+            <a href="#resume">Resume</a>
+            <a href="#portfolio">Portofolio</a>
+            <a href="#certificates">Sertifikat</a>
+            <a href="#contact">Kontak</a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="modal-close mobile-close" onclick="toggleMenu()">✕</button>
+        <a href="#home" onclick="toggleMenu()">Beranda</a>
+        <a href="#about" onclick="toggleMenu()">Tentang</a>
+        <a href="#skills" onclick="toggleMenu()">Keahlian</a>
+        <a href="#services" onclick="toggleMenu()">Layanan</a>
+        <a href="#resume" onclick="toggleMenu()">Resume</a>
+        <a href="#portfolio" onclick="toggleMenu()">Portofolio</a>
+        <a href="#certificates" onclick="toggleMenu()">Sertifikat</a>
+        <a href="#contact" onclick="toggleMenu()">Kontak</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-ghost" aria-hidden="true">WELCOME</div>
+        <div class="hero-grid">
+            <div class="reveal">
+                <div class="eyebrow">Portofolio — 2026</div>
+                <h1>Muhamad Fajar<br>Nurcahyadi</h1>
+                <div class="hero-role">Fullstack Engineer &amp; UI/UX Designer</div>
+                <p class="hero-desc">Mahasiswa Informatika semester 7 yang membangun produk web &amp; mobile secara end-to-end — mulai dari desain antarmuka di Figma hingga backend API PHP.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="cv.pdf" download><i class="fas fa-arrow-down"></i> Unduh CV</a>
+                    <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="hero-photo-wrap reveal">
+                <div class="photo-frame">
+                    <img src="foto.jpg" alt="Fajar" class="hero-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hero-photo-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+        <div class="section-head">
+            <div class="eyebrow">Tentang</div>
+            <h2>Tentang Saya</h2>
+        </div>
+        <div class="about-container">
+            <div>
+                <p class="about-desc">Saya mahasiswa aktif semester 7 di Bina Sarana Informatika dengan minat dan fokus yang kuat di bidang pengembangan perangkat lunak. Saya sangat tertarik pada Desain UI/UX, Backend Engineering, Frontend Engineering, Web Development, dan Mobile Development. Dengan menggabungkan kemampuan desain dan pengembangan, saya berusaha menciptakan solusi digital yang tidak hanya fungsional tetapi juga memberikan pengalaman pengguna yang optimal.</p>
+                <div class="tag-label">Minat</div>
+                <div class="tag-row">
+                    <span class="tag">Coding</span>
+                    <span class="tag">Game</span>
+                    <span class="tag">Pengembangan Mobile</span>
+                    <span class="tag">Mendaki</span>
+                    <span class="tag">Desain UI/UX</span>
+                    <span class="tag">Pengembangan Frontend/Backend</span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Proyek Jangka Panjang</span>
+                </div>
+            </div>
+            <div class="about-info">
+                <div class="about-info-item">
+                    <span class="about-info-label">Email</span>
+                    <span class="about-info-value">fajar.nurcahyadi515@gmail.com</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="about-info-label">Stack</span>
+                    <span class="about-info-value">Mobile · Frontend · Backend</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="about-info-label">Telepon</span>
+                    <span class="about-info-value">+62 818-1824-1116</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="about-info-label">Freelance</span>
+                    <span class="about-info-value" style="color:var(--accent);">Tersedia</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="about-info-label">Kota</span>
+                    <span class="about-info-value">Bekasi, Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <div class="marquee-block" id="skills">
+        <div class="marquee-label">Alat &amp; Teknologi</div>
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="skill-word">Flutter</span><span class="dot">✦</span>
+                <span class="skill-word">JavaScript</span><span class="dot">✦</span>
+                <span class="skill-word">PHP</span><span class="dot">✦</span>
+                <span class="skill-word">CodeIgniter</span><span class="dot">✦</span>
+                <span class="skill-word">MySQL</span><span class="dot">✦</span>
+                <span class="skill-word">HTML</span><span class="dot">✦</span>
+                <span class="skill-word">Figma</span><span class="dot">✦</span>
+                <span class="skill-word">Ms Office & Word</span><span class="dot">✦</span>
+                <span class="skill-word">Flutter</span><span class="dot">✦</span>
+                <span class="skill-word">JavaScript</span><span class="dot">✦</span>
+                <span class="skill-word">PHP</span><span class="dot">✦</span>
+                <span class="skill-word">CodeIgniter</span><span class="dot">✦</span>
+                <span class="skill-word">MySQL</span><span class="dot">✦</span>
+                <span class="skill-word">HTML</span><span class="dot">✦</span>
+                <span class="skill-word">Figma</span><span class="dot"></span>
+                <span class="skill-word">Ms Office & Word</span><span class="dot">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="reveal">
+        <div class="section-head">
+            <div class="eyebrow">Layanan</div>
+            <h2>Yang Saya Kerjakan</h2>
+        </div>
+        <div class="services-list">
+            <div class="service-row">
+                <div class="service-num">01</div>
+                <div>
+                    <h3>Aplikasi Website</h3>
+                    <p>Membangun aplikasi web modern dan responsif menggunakan PHP, CodeIgniter, dan teknologi web terkini.</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-num">02</div>
+                <div>
+                    <h3>Aplikasi Mobile</h3>
+                    <p>Mengembangkan aplikasi mobile cross-platform menggunakan Flutter dan Dart untuk Android maupun iOS.</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-num">03</div>
+                <div>
+                    <h3>Pengembangan Frontend</h3>
+                    <p>Merancang tampilan UI yang menarik dan interaktif menggunakan HTML, CSS, dan JavaScript.</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-num">04</div>
+                <div>
+                    <h3>Pengembangan Backend</h3>
+                    <p>Membangun REST API yang handal menggunakan PHP Native, PostgreSQL, dan arsitektur yang skalabel.</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-num">05</div>
+                <div>
+                    <h3>Desain UI/UX</h3>
+                    <p>Mendesain pengalaman pengguna yang intuitif dan estetis menggunakan Figma dan prinsip desain modern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="reveal">
+        <div class="section-head">
+            <div class="eyebrow">Resume</div>
+            <h2>Pendidikan &amp; Pengalaman</h2>
+        </div>
+        <div class="resume-grid">
+            <div class="resume-col">
+                <h3>Pendidikan</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023 — Present</span>
+                        <h4>Universitas Bina Sarana Informatika</h4>
+                        <p>Informatika</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2020 — 2023</span>
+                        <h4>SMA Negeri 9 Tambun Selatan</h4>
+                        <p>Ilmu Pengetahuan Alam</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2017 — 2020</span>
+                        <h4>SMP Negeri 12 Tambun Selatan</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2010 — 2016</span>
+                        <h4>SD Negeri Wanasari 15</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-col">
+                <h3>Pengalaman Profesional</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2026 — Feb 2026</span>
+                        <h4>Badan Nasional Penanggulangan Bencana</h4>
+                        <p>Frontend/Backend Engineer, Penulisan Teknis — Aplikasi SI DAMA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="reveal">
+        <div class="section-head">
+            <div class="eyebrow">Portofolio</div>
+            <h2>Karya Terpilih</h2>
+        </div>
+        <div class="porto-filter">
+            <button class="active" onclick="filterPortfolio('all', this)">Semua</button>
+            <button onclick="filterPortfolio('mobile', this)">Aplikasi Mobile</button>
+            <button onclick="filterPortfolio('website', this)">Aplikasi Website</button>
+            <button onclick="filterPortfolio('uiux', this)">UI/UX</button>
+            <button onclick="filterPortfolio('frontend', this)">Frontend/Backend</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="porto-card" data-category="website">
+                <span class="porto-tag">Website</span>
+                <img src="project1.jpg" alt="Berkesan Studio" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Proyek+Website'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Berkesan Studio','APLIKASI WEBSITE','Pengembangan Web · PHP · CodeIgniter',['project1.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Berkesan Studio</h3>
+                    <span>Aplikasi Website</span>
+                </div>
+            </div>
+            <div class="porto-card" data-category="mobile">
+                <span class="porto-tag">Mobile</span>
+                <img src="project2.jpg" alt="Aplikasi Mobile" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Aplikasi+Mobile'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Aplikasi Mobile','APLIKASI MOBILE','Pengembangan Mobile · Flutter · Dart',['project2.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>E-Baca</h3>
+                    <span>Aplikasi Mobile</span>
+                </div>
+            </div>
+            <div class="porto-card" data-category="uiux">
+                <span class="porto-tag">UI/UX</span>
+                <img src="project3.jpg" alt="Desain UI/UX" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Desain+UI/UX'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Desain UI/UX','UI/UX','UI/UX · Figma · Prototipe',['project3.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Amberita</h3>
+                    <span>UI/UX</span>
+                </div>
+            </div>
+            <div class="porto-card" data-category="frontend">
+                <span class="porto-tag">Frontend/Backend</span>
+                <img src="project4.jpg" alt="SI DAMA" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=SI+DAMA'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Frontend/Backend Engineer','FRONTEND / BACKEND','Golang (Gin) · JavaScript · PostgreSQL · REST API',['project4.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>SI DAMA</h3>
+                    <span>Frontend / Backend</span>
+                </div>
+            </div>
+
+            <!-- MOBILE APP -->
+            <div class="porto-card" data-category="mobile">
+                <span class="porto-tag">Mobile</span>
+                <img src="project5.jpg" alt="Ambaca" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Ambaca','APLIKASI MOBILE','Flutter · Dart · REST API',['project5.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Ambaca</h3>
+                    <span>Aplikasi Mobile</span>
+                </div>
+            </div>
+
+            <!-- WEBSITE APP -->
+            <div class="porto-card" data-category="website">
+                <span class="porto-tag">Website</span>
+                <img src="project6.jpg" alt="NAMA PROYEK WEBSITE" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('SISTEM PENGGAJIAN PT','APLIKASI WEBSITE','PHP · CodeIgniter · MySQL',['project6.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Sistem Penggajian PT</h3>
+                    <span>Aplikasi Website</span>
+                </div>
+            </div>
+
+            <!-- UI/UX 1 -->
+            <div class="porto-card" data-category="uiux">
+                <span class="porto-tag">UI/UX</span>
+                <img src="project7.jpg" alt="Berkesan Studio" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
+                <div class="porto-hover">
+                    <div class="porto-zoom" onclick="openModal('Berkesan Studio 1','UI/UX','Figma · Prototipe',['project7.jpg','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+2','https://placehold.co/560x240/1c1e23/9a9da4?text=Cuplikan+3'])">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Berkesan Studio</h3>
+                    <span>UI/UX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="reveal">
+        <div class="section-head">
+            <div class="eyebrow">Sertifikat</div>
+            <h2>Sertifikasi</h2>
+        </div>
+        <div class="cert-grid" id="certGrid"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="block-dark">
+        <section id="contact" class="reveal">
+            <div class="section-head">
+                <div class="eyebrow">Kontak</div>
+                <h2>Mari Bekerja Sama</h2>
+                <p style="margin-top:14px;">Jangan ragu untuk menghubungi saya melalui salah satu platform di bawah ini.</p>
+            </div>
+            <div class="contact-list">
+                <a href="mailto:fajar.nurcahyadi515@gmail.com" class="contact-row">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">fajar.nurcahyadi515@gmail.com</div>
+                    </div>
+                    <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muhamad-fajar-nurcahyadi-679999290/" target="_blank" class="contact-row">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <div>
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">Muhamad Fajar Nurcahyadi</div>
+                    </div>
+                    <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+                <a href="https://instagram.com/jarrnrchyd" target="_blank" class="contact-row">
+                    <i class="fab fa-instagram contact-icon"></i>
+                    <div>
+                        <div class="contact-label">Instagram</div>
+                        <div class="contact-value">@jarrnrchyd</div>
+                    </div>
+                    <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Muhamad Fajar Nurcahyadi. Dibuat dengan sepenuh hati.
+        </footer>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" onclick="handleModalClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-img-wrap">
+                <img id="modal-img" class="modal-img" src="" alt="" onerror="this.src='https://placehold.co/560x240/1c1e23/9a9da4?text=Tidak+Ada+Gambar'">
+                <button class="modal-nav modal-prev" id="modal-prev" onclick="prevModalImage()"><i class="fas fa-chevron-left"></i></button>
+                <button class="modal-nav modal-next" id="modal-next" onclick="nextModalImage()"><i class="fas fa-chevron-right"></i></button>
+                <div class="modal-counter" id="modal-counter"></div>
+            </div>
+            <div class="modal-body">
+                <h3 id="modal-title"></h3>
+                <div class="modal-cat" id="modal-cat"></div>
+                <p id="modal-desc"></p>
+                <div class="modal-dots" id="modal-dots"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERTIFICATE MODAL -->
+    <div id="certModal" onclick="handleCertModalClick(event)">
+        <div class="cert-modal-box">
+            <button class="modal-close" onclick="closeCertModal()">✕</button>
+            <div class="cert-modal-header">
+                <h3 id="certModalTitle"></h3>
+                <div class="cert-issuer" id="certModalIssuer"></div>
+            </div>
+            <div class="cert-modal-frame-wrap">
+                <iframe id="certModalFrame" src="" title="Pratinjau Sertifikat"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("open");
+        }
+
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        let modalImages = [];
+        let modalIndex = 0;
+
+        function openModal(title, cat, desc, images) {
+            modalImages = Array.isArray(images) ? images : [images];
+            modalIndex = 0;
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-cat").innerText = cat;
+            document.getElementById("modal-desc").innerText = desc;
+            renderModalImage();
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function renderModalImage() {
+            const title = document.getElementById("modal-title").innerText;
+            const multi = modalImages.length > 1;
+
+            document.getElementById("modal-img").src = modalImages[modalIndex];
+            document.getElementById("modal-img").alt = title + " - image " + (modalIndex + 1);
+
+            document.getElementById("modal-prev").style.display = multi ? "flex" : "none";
+            document.getElementById("modal-next").style.display = multi ? "flex" : "none";
+
+            const counter = document.getElementById("modal-counter");
+            counter.style.display = multi ? "block" : "none";
+            counter.innerText = (modalIndex + 1) + " / " + modalImages.length;
+
+            const dotsWrap = document.getElementById("modal-dots");
+            dotsWrap.innerHTML = "";
+            if (multi) {
+                modalImages.forEach((_, i) => {
+                    const dot = document.createElement("span");
+                    dot.className = "modal-dot" + (i === modalIndex ? " active" : "");
+                    dot.onclick = () => { modalIndex = i; renderModalImage(); };
+                    dotsWrap.appendChild(dot);
+                });
+            }
+        }
+
+        function prevModalImage() {
+            modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+            renderModalImage();
+        }
+
+        function nextModalImage() {
+            modalIndex = (modalIndex + 1) % modalImages.length;
+            renderModalImage();
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        function handleModalClick(e) {
+            if (e.target === document.getElementById("modal")) closeModal();
+        }
+
+        function filterPortfolio(cat, btnEl) {
+            document.querySelectorAll('.porto-card').forEach(card => {
+                card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
+            });
+            document.querySelectorAll('.porto-filter button').forEach(btn => btn.classList.remove('active'));
+            btnEl.classList.add('active');
+        }
+
+        // Data sertifikat — tinggal tambah/edit item di sini untuk sertifikat baru.
+        // file: path ke PDF di dalam assets/certificates/
+        const certificatesData = [
+            { title: "PCAP: Programming Essentials in Python", issuer: "Cisco Networking Academy", file: "assets/certificates/sertifikat-1.pdf" },
+            { title: "CCNA: Introduction to Networks", issuer: "Cisco Networking Academy", file: "assets/certificates/sertifikat-2.pdf" }
+        ];
+
+        if (typeof pdfjsLib !== "undefined") {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement("div");
+            div.innerText = str;
+            return div.innerHTML;
+        }
+
+        function renderCertificates() {
+            const grid = document.getElementById("certGrid");
+            if (!grid) return;
+            grid.innerHTML = certificatesData.map((cert, i) => `
+                <div class="cert-card" onclick="openCertModal(${i})">
+                    <div class="cert-thumb">
+                        <i class="fas fa-file-pdf cert-thumb-icon" id="cert-thumb-icon-${i}"></i>
+                        <canvas class="cert-thumb-canvas" id="cert-thumb-canvas-${i}"></canvas>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
+                        <h3 class="cert-title">${escapeHtml(cert.title)}</h3>
+                        <span class="cert-view">Lihat Sertifikat <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            `).join("");
+            certificatesData.forEach((cert, i) => renderCertThumbnail(i, cert.file));
+        }
+        renderCertificates();
+
+        function renderCertThumbnail(index, url) {
+            if (typeof pdfjsLib === "undefined") return;
+            pdfjsLib.getDocument(url).promise
+                .then(pdf => pdf.getPage(1))
+                .then(page => {
+                    const canvas = document.getElementById("cert-thumb-canvas-" + index);
+                    if (!canvas) return;
+                    const wrap = canvas.parentElement;
+                    const dpr = window.devicePixelRatio || 1;
+                    // Render pas dengan lebar kotak preview lalu biarkan canvas meng-clip
+                    // sisa tinggi halaman PDF, jadi bagian atas (paling informatif) yang tampil.
+                    const targetWidth = Math.max(1, Math.round(wrap.clientWidth * dpr));
+                    const targetHeight = Math.max(1, Math.round(wrap.clientHeight * dpr));
+                    const baseViewport = page.getViewport({ scale: 1 });
+                    const scale = targetWidth / baseViewport.width;
+                    const viewport = page.getViewport({ scale });
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+                    return page.render({ canvasContext: canvas.getContext("2d"), viewport: viewport }).promise.then(() => {
+                        canvas.style.display = "block";
+                        const icon = document.getElementById("cert-thumb-icon-" + index);
+                        if (icon) icon.style.display = "none";
+                    });
+                })
+                .catch(err => {
+                    console.warn("Tidak bisa merender thumbnail sertifikat (" + url + "):", err);
+                });
+        }
+
+        function openCertModal(index) {
+            const cert = certificatesData[index];
+            if (!cert) return;
+            document.getElementById("certModalTitle").innerText = cert.title;
+            document.getElementById("certModalIssuer").innerText = cert.issuer;
+            document.getElementById("certModalFrame").src = cert.file;
+            document.getElementById("certModal").style.display = "flex";
+        }
+
+        function closeCertModal() {
+            document.getElementById("certModal").style.display = "none";
+            document.getElementById("certModalFrame").src = "";
+        }
+
+        function handleCertModalClick(e) {
+            if (e.target === document.getElementById("certModal")) closeCertModal();
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                closeModal();
+                closeCertModal();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
