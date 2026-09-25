@@ -887,6 +887,43 @@
             margin-bottom: 14px;
         }
 
+        .modal-demo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 4px 0 14px;
+            transition: 0.2s;
+        }
+
+        .modal-demo-btn:hover {
+            background: var(--accent-dark);
+        }
+
+        .modal-role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--paper);
+            border: 1px solid var(--line-strong);
+            color: var(--ink-soft);
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            font-size: 12.5px;
+            font-weight: 600;
+            margin: 4px 0 14px;
+        }
+
+        .modal-demo-wrap {
+            display: block;
+        }
+
         .modal-body p {
             font-size: 14px;
             margin: 0;
@@ -1469,7 +1506,7 @@
                 <span class="porto-tag">Website</span>
                 <img src="project1.jpg" alt="Berkesan Studio" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Proyek+Website'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('Berkesan Studio','APLIKASI WEBSITE','PHP · CodeIgniter','project1.jpg','Pengembangan aplikasi web untuk booking studio foto secara online, dibangun menggunakan PHP dan CodeIgniter dengan MySQL sebagai database. Fitur mencakup sistem pemesanan, manajemen data studio, pembayaran, hingga ulasan pelanggan, dengan struktur data yang dirancang melalui ERD/LRS mencakup tabel users, studios, bookings, payments, reviews, dan settings.')">
+                    <div class="porto-zoom" onclick="openModal('Berkesan Studio','APLIKASI WEBSITE','PHP · CodeIgniter','project1.jpg','Pengembangan aplikasi web untuk booking studio foto secara online, dibangun menggunakan PHP dan CodeIgniter dengan MySQL sebagai database. Fitur mencakup sistem pemesanan, manajemen data studio, pembayaran, hingga ulasan pelanggan, dengan struktur data yang dirancang melalui ERD/LRS mencakup tabel users, studios, bookings, payments, reviews, dan settings.', null, null)">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>Berkesan Studio</h3>
@@ -1480,7 +1517,7 @@
                 <span class="porto-tag">Mobile</span>
                 <img src="project2.jpg" alt="Aplikasi Mobile" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Aplikasi+Mobile'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('E-Baca','APLIKASI MOBILE','Flutter · Dart','project2.jpg','Platform bacaan digital yang berisi materi pelajaran sekolah, dirancang agar siswa bisa mengakses dan membaca materi pembelajaran secara online dengan tampilan yang rapi dan mudah dinavigasi.')">
+                    <div class="porto-zoom" onclick="openModal('E-Baca','APLIKASI MOBILE','Flutter · Dart','project2.jpg','Platform bacaan digital yang berisi materi pelajaran sekolah, dirancang agar siswa bisa mengakses dan membaca materi pembelajaran secara online dengan tampilan yang rapi dan mudah dinavigasi.', null, null)">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>E-Baca</h3>
@@ -1491,7 +1528,7 @@
                 <span class="porto-tag">UI/UX</span>
                 <img src="project3.jpg" alt="Desain UI/UX" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Desain+UI/UX'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('Amberita','UI/UX','Figma · Prototipe','project3.jpg','Platform berita online dengan konsep dan gaya penyajian mirip Folkative — ringkas, menarik, dan mudah dibaca. Mencakup desain UI/UX untuk tampilan artikel, kategori berita, dan pengalaman membaca yang santai namun informatif.')">
+                    <div class="porto-zoom" onclick="openModal('Amberita','UI/UX','Figma · Prototipe','project3.jpg','Platform berita online dengan konsep dan gaya penyajian mirip Folkative — ringkas, menarik, dan mudah dibaca. Mencakup desain UI/UX untuk tampilan artikel, kategori berita, dan pengalaman membaca yang santai namun informatif.', 'figma', 'https://www.figma.com/proto/62b33lyDqK88laptP3Dbr2/ambaca.com?team_id=1429012148278008209&node-id=604-1659&page-id=4%3A70&starting-point-node-id=604%3A1659&t=a2C1QnORMUph9VtR-1')">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>Amberita</h3>
@@ -1502,7 +1539,7 @@
                 <span class="porto-tag">Frontend</span>
                 <img src="project4.jpg" alt="SI DAMA" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=SI+DAMA'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('SI DAMA','FRONTEND ENGINEER','HTML · CSS · JavaScript','project4.jpg','SI DAMA (Sistem Informasi Dana Bersama) adalah aplikasi web milik Badan Nasional Penanggulangan Bencana (BNPB). Bertanggung jawab penuh atas seluruh tampilan (UI) aplikasi selama masa magang, termasuk halaman login, dashboard, dan seluruh komponen antarmuka lainnya, dengan identitas visual mengikuti brand BNPB (warna oranye, logo resmi) dan tampilan yang responsif.')">
+                    <div class="porto-zoom" onclick="openModal('SI DAMA','FRONTEND ENGINEER','HTML · CSS · JavaScript','project4.jpg','SI DAMA (Sistem Informasi Dana Bersama) adalah aplikasi web milik Badan Nasional Penanggulangan Bencana (BNPB). Bertanggung jawab penuh atas seluruh tampilan (UI) aplikasi selama masa magang, termasuk halaman login, dashboard, dan seluruh komponen antarmuka lainnya, dengan identitas visual mengikuti brand BNPB (warna oranye, logo resmi) dan tampilan yang responsif.', 'role', null)">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>SI DAMA</h3>
@@ -1515,7 +1552,7 @@
                 <span class="porto-tag">Mobile</span>
                 <img src="project5.jpg" alt="Ambaca" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('Ambaca','APLIKASI MOBILE','Flutter · Dart · REST API','project5.jpg','Platform baca cerita bergaya Wattpad, dibangun full-stack: Flutter di frontend, PHP native REST API di backend, dan MySQL sebagai database (9 tabel). Autentikasi menggunakan JWT (HS256) buatan sendiri. Mencakup halaman beranda, detail cerita, mode baca bertema gelap ungu, dashboard admin, profil, notifikasi, riwayat, bookmark, hingga pencarian. Desain UI/UX dengan skema warna indigo modern, dirancang di Figma dengan bantuan plugin custom.')">
+                    <div class="porto-zoom" onclick="openModal('Ambaca','APLIKASI MOBILE','Flutter · Dart · REST API','project5.jpg','Platform baca cerita bergaya Wattpad, dibangun full-stack: Flutter di frontend, PHP native REST API di backend, dan MySQL sebagai database (9 tabel). Autentikasi menggunakan JWT (HS256) buatan sendiri. Mencakup halaman beranda, detail cerita, mode baca bertema gelap ungu, dashboard admin, profil, notifikasi, riwayat, bookmark, hingga pencarian. Desain UI/UX dengan skema warna indigo modern, dirancang di Figma dengan bantuan plugin custom.', null, null)">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>Ambaca</h3>
@@ -1528,7 +1565,7 @@
                 <span class="porto-tag">Website</span>
                 <img src="project6.jpg" alt="NAMA PROYEK WEBSITE" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('Sistem Penggajian PT','APLIKASI WEBSITE','PHP · CodeIgniter · MySQL','project6.jpg','Project workshop perkuliahan berupa aplikasi web untuk merekap gaji karyawan pada sebuah PT (data dummy/simulasi). Berfokus pada pengelolaan data penggajian secara terstruktur menggunakan PHP dan MySQL.')">
+                    <div class="porto-zoom" onclick="openModal('Sistem Penggajian PT','APLIKASI WEBSITE','PHP · CodeIgniter · MySQL','project6.jpg','Project workshop perkuliahan berupa aplikasi web untuk merekap gaji karyawan pada sebuah PT (data dummy/simulasi). Berfokus pada pengelolaan data penggajian secara terstruktur menggunakan PHP dan MySQL.', 'link', 'https://testingfajar.infy.click')">
                         <i class="fas fa-plus"></i>
                     </div>
                     <h3>Sistem Penggajian PT</h3>
@@ -1536,15 +1573,15 @@
                 </div>
             </div>
 
-            <!-- UI/UX 1 -->
+            <!-- KASKITA -->
             <div class="porto-card" data-category="uiux">
                 <span class="porto-tag">UI/UX</span>
-                <img src="project7.jpg" alt="Berkesan Studio" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=NAMA+PROYEK'">
+                <img src="kaskita.jpg" alt="KasKita" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=KasKita'">
                 <div class="porto-hover">
-                    <div class="porto-zoom" onclick="openModal('Berkesan Studio','UI/UX','Figma · Prototipe','project7.jpg','Desain UI/UX untuk aplikasi booking studio foto, terinspirasi estetika Vercel dengan mode gelap dan sentuhan motif batik Kawung sebagai background, dipadukan aksen warna merah berani. Proses desain dilakukan di Figma, mencakup seluruh alur pengguna dari pemilihan paket hingga konfirmasi booking.')">
+                    <div class="porto-zoom" onclick="openModal('KasKita','UI/UX · APLIKASI MOBILE','Figma · Flutter (in progress)','kaskita.jpg','Aplikasi pencatatan keuangan pribadi berbasis Flutter. Desain UI/UX sudah rampung dibuat di Figma dan saat ini sedang tahap menghubungkan desain ke implementasi kode di VSCode.', 'figma', 'https://www.figma.com/proto/1j4ZprxSnXYfHEZTxwK29m/KasKita?node-id=26-105&p=f&viewport=222%2C338%2C0.1&t=O3ysB13GxqL5AXEj-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=26%3A105&show-proto-sidebar=1&page-id=0%3A1')">
                         <i class="fas fa-plus"></i>
                     </div>
-                    <h3>Berkesan Studio</h3>
+                    <h3>KasKita</h3>
                     <span>UI/UX</span>
                 </div>
             </div>
@@ -1612,6 +1649,7 @@
                 <h3 id="modal-title"></h3>
                 <div class="modal-cat" id="modal-cat"></div>
                 <span class="modal-tech" id="modal-tech"></span>
+                <div class="modal-demo-wrap" id="modal-demo"></div>
                 <p id="modal-desc"></p>
             </div>
         </div>
@@ -1647,7 +1685,7 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        function openModal(title, cat, tech, image, desc) {
+        function openModal(title, cat, tech, image, desc, demoType, demoUrl) {
             document.getElementById("modal-title").innerText = title;
             document.getElementById("modal-cat").innerText = cat;
             document.getElementById("modal-tech").innerText = tech;
@@ -1655,6 +1693,20 @@
             const img = document.getElementById("modal-img");
             img.src = image;
             img.alt = title;
+
+            const demoEl = document.getElementById("modal-demo");
+            if (demoType === "figma") {
+                demoEl.innerHTML = `<a href="${demoUrl}" target="_blank" rel="noopener" class="modal-demo-btn"><i class="fab fa-figma"></i> Lihat Demo Prototype</a>`;
+            } else if (demoType === "link") {
+                demoEl.innerHTML = `<a href="${demoUrl}" target="_blank" rel="noopener" class="modal-demo-btn"><i class="fas fa-arrow-up-right-from-square"></i> Lihat Demo</a>`;
+            } else if (demoType === "video") {
+                demoEl.innerHTML = `<a href="${demoUrl}" target="_blank" rel="noopener" class="modal-demo-btn"><i class="fas fa-circle-play"></i> Tonton Demo</a>`;
+            } else if (demoType === "role") {
+                demoEl.innerHTML = `<span class="modal-role-badge"><i class="fas fa-briefcase"></i> Bukan milik pribadi — proyek BNPB, saya sebagai Engineer</span>`;
+            } else {
+                demoEl.innerHTML = "";
+            }
+
             document.getElementById("modal").style.display = "flex";
         }
 
