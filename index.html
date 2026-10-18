@@ -310,20 +310,7 @@
             max-width: 300px;
         }
 
-        .photo-frame::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--accent);
-            border-radius: var(--radius);
-            transform: rotate(-4deg);
-            z-index: 0;
-            transition: transform 0.35s;
-        }
 
-        .photo-frame:hover::before {
-            transform: rotate(-1deg);
-        }
 
         .hero-photo,
         .hero-photo-placeholder {
@@ -333,14 +320,14 @@
             aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: var(--radius);
-            border: 1px solid var(--ink);
-            transform: rotate(2deg);
+            border: 1px solid var(--line-strong);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
             transition: transform 0.35s;
             display: block;
         }
 
         .photo-frame:hover .hero-photo {
-            transform: rotate(0deg);
+            transform: translateY(-6px);
         }
 
         .hero-photo-placeholder {
