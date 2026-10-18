@@ -36,7 +36,7 @@
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: auto;
         }
 
         body {
@@ -1524,11 +1524,11 @@
             </div>
 
             <!-- MOBILE APP -->
-            <div class="porto-card" data-category="mobile" onclick="openModal('Ambaca','APLIKASI MOBILE','Flutter · Dart · REST API','project5.jpg','Platform baca cerita bergaya Wattpad, dibangun full-stack: Flutter di frontend, PHP native REST API di backend, dan MySQL sebagai database (9 tabel). Autentikasi menggunakan JWT (HS256) buatan sendiri. Mencakup halaman beranda, detail cerita, mode baca bertema gelap ungu, dashboard admin, profil, notifikasi, riwayat, bookmark, hingga pencarian. Desain UI/UX dengan skema warna indigo modern, dirancang di Figma dengan bantuan plugin custom.', null, null)">
+            <div class="porto-card" data-category="mobile" onclick="openModal('Ambaca V2','APLIKASI MOBILE','Flutter · Dart · REST API','project5.jpg','Platform baca cerita bergaya Wattpad, dibangun full-stack: Flutter di frontend, PHP native REST API di backend, dan MySQL sebagai database (9 tabel). Autentikasi menggunakan JWT (HS256) buatan sendiri. Mencakup halaman beranda, detail cerita, mode baca bertema gelap ungu, dashboard admin, profil, notifikasi, riwayat, bookmark, hingga pencarian. Desain UI/UX dengan skema warna indigo modern, dirancang di Figma dengan bantuan plugin custom.', null, null)">
                 <span class="porto-tag">Mobile</span>
                 <img src="project5.jpg" alt="Ambaca" onerror="this.src='https://placehold.co/400x260/131417/eef0f3?text=Ambaca'">
                 <div class="porto-hover">
-                    <h3>Ambaca</h3>
+                    <h3>Ambaca V2</h3>
                     <span>Aplikasi Mobile</span>
                 </div>
             </div>
@@ -1641,6 +1641,62 @@
         function toggleMenu() {
             document.getElementById("mobileMenu").classList.toggle("open");
         }
+
+        // ANIMASI GULIR SAAT KLIK MENU / TOMBOL (nav, menu mobile, Hubungi Saya, logo)
+        (function () {
+            const DURATION = 1100; // ms, makin besar makin pelan
+            const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            let rafId = null;
+
+            function stopScroll() {
+                if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+            }
+
+            function scrollToY(targetY) {
+                stopScroll();
+                const startY = window.scrollY;
+                const maxY = document.documentElement.scrollHeight - window.innerHeight;
+                const endY = Math.max(0, Math.min(targetY, maxY));
+                const distance = endY - startY;
+                if (Math.abs(distance) < 2) return;
+
+                if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    window.scrollTo(0, endY);
+                    return;
+                }
+
+                const startTime = performance.now();
+                function step(now) {
+                    const progress = Math.min((now - startTime) / DURATION, 1);
+                    window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+                    if (progress < 1) rafId = requestAnimationFrame(step);
+                    else rafId = null;
+                }
+                rafId = requestAnimationFrame(step);
+            }
+
+            // kalau user scroll manual di tengah animasi, animasinya berhenti
+            ["wheel", "touchstart", "keydown"].forEach(evt =>
+                window.addEventListener(evt, stopScroll, { passive: true })
+            );
+
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const hash = this.getAttribute("href");
+                    if (!hash || hash === "#") return;
+                    const target = document.querySelector(hash);
+                    if (!target) return;
+                    e.preventDefault();
+
+                    const nav = document.querySelector("nav");
+                    const navH = nav ? nav.offsetHeight : 0;
+                    // section sudah punya padding atas, jadi cukup elemen non-section yang diberi offset nav
+                    const offset = target.tagName === "SECTION" ? 0 : navH;
+                    const y = hash === "#home" ? 0 : target.getBoundingClientRect().top + window.scrollY - offset;
+                    scrollToY(y);
+                });
+            });
+        })();
 
         function reveal() {
             document.querySelectorAll(".reveal").forEach(el => {
